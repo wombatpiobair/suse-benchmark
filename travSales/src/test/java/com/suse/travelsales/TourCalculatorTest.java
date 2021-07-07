@@ -58,6 +58,7 @@ public class TourCalculatorTest {
             System.out.println(" -> " + t.getCities());
         }
 
+        // with this sample set there are 4 distance values
         assertEquals(tours.size(), 4);
     }
 

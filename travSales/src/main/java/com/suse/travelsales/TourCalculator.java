@@ -7,7 +7,9 @@ public class TourCalculator {
     private List<City> cities = new ArrayList<City>();
 
     public TourCalculator(List<City> tour){
-
+        if((null == tour) || tour.size() == 0) {
+            throw new IllegalArgumentException("a non-zero length list of cities required");
+        }
         this.cities = tour;
     }
 

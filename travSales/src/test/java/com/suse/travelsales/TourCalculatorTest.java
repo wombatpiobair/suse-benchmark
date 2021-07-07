@@ -1,10 +1,13 @@
 package com.suse.travelsales;
 
+import org.apache.commons.math3.util.CombinatoricsUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TourCalculatorTest {
 
@@ -19,12 +22,27 @@ public class TourCalculatorTest {
     }
 
     @Test
+    public void badListTest() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            new TourCalculator(null);
+        });
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            new TourCalculator(new ArrayList<City>());
+        });
+    }
+
+    @Test
     public void permTester() {
         Permuter<City> perm = new Permuter<City>();
 
-        for(List<City> pm:perm.permute(cityList)) {
+        List<List<City>> permutations = perm.permute(cityList);
+        for(List<City> pm:permutations) {
             System.out.println(pm);
         }
+
+        long expectedSize = CombinatoricsUtils.factorial(cityList.size());
+        assertEquals(expectedSize, (long)permutations.size());
     }
 
     @Test

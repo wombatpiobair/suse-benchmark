@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Tour {
     private float distance = 0.0F;
+    List<City> cities = new ArrayList<>();
 
     public float getDistance() {
         return distance;
@@ -22,5 +23,5 @@ public class Tour {
         this.cities = cities;
     }
 
-    List<City> cities = new ArrayList<>();
+
 }

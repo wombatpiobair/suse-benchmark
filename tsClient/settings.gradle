@@ -1,0 +1,3 @@
+rootProject.name = 'tsCient'
+include ':travSales'
+project(':travSales').projectDir = new File("../travSales")

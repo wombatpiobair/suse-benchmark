@@ -7,6 +7,7 @@ public class TourCalculator {
     private List<City> cities = new ArrayList<City>();
 
     public TourCalculator(List<City> tour){
+
         this.cities = tour;
     }
 

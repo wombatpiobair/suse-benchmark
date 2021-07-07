@@ -13,8 +13,8 @@ public class TourCalculatorTest {
     @BeforeEach
     public void setup() {
         cityList.add(new City(0, 0));
-        cityList.add(new City(1, 0));
-        cityList.add(new City(1, 1));
+        cityList.add(new City(2, 1));
+        cityList.add(new City(2, 2));
         cityList.add(new City(0, 1));
     }
 
@@ -47,6 +47,42 @@ public class TourCalculatorTest {
         System.out.println("shortest distance: " + tours.get(0).getDistance());
         for(Tour t:tours) {
                 System.out.println(" -> " + t.getCities());
+        }
+    }
+
+    @Test
+    public void testShortestRandom() {
+        List<City> localList = new ArrayList<>();
+
+        localList.add(new City());
+        localList.add(new City());
+        localList.add(new City());
+        localList.add(new City());
+        localList.add(new City());
+        localList.add(new City());
+        localList.add(new City());
+        localList.add(new City());
+        localList.add(new City());
+        localList.add(new City());
+
+
+        TourCalculator calc = new TourCalculator(localList);
+
+        /*
+        List<List<Tour>> sortedtours = calc.getSortedTours();
+        for(List<Tour> tlist: sortedtours) {
+            System.out.println("cities for distance: " + tlist.get(0).getDistance());
+            for(Tour t:tlist)
+                System.out.println(" -> " + t.getCities());
+        }
+
+         */
+
+        List<Tour> tours = calc.getShortest();
+
+        System.out.println("random list - shortest distance: " + tours.get(0).getDistance());
+        for(Tour t:tours) {
+            System.out.println(" -> " + t.getCities());
         }
     }
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.suse.travelsales.TourCalculatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-07-07T18:55:03" hostname="Bobs-Altoros-Mac.local" time="0.017">
+  <properties/>
+  <testcase name="testShortest()" classname="com.suse.travelsales.TourCalculatorTest" time="0.017"/>
+  <system-out><![CDATA[shortest distance: 4.0
+ -> [ [0, 0],  [1, 0],  [1, 1],  [0, 1]]
+ -> [ [0, 0],  [0, 1],  [1, 1],  [1, 0]]
+ -> [ [1, 0],  [0, 0],  [0, 1],  [1, 1]]
+ -> [ [1, 0],  [1, 1],  [0, 1],  [0, 0]]
+ -> [ [1, 1],  [1, 0],  [0, 0],  [0, 1]]
+ -> [ [1, 1],  [0, 1],  [0, 0],  [1, 0]]
+ -> [ [0, 1],  [0, 0],  [1, 0],  [1, 1]]
+ -> [ [0, 1],  [1, 1],  [1, 0],  [0, 0]]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

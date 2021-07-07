@@ -1,0 +1,6 @@
+com/example/springboot/ApplicationTests.java
+ com.example.springboot.ApplicationTests
+com/suse/travelsales/PermuterTest.java
+ com.suse.travelsales.PermuterTest
+com/suse/travelsales/TourCalculatorTest.java
+ com.suse.travelsales.TourCalculatorTest

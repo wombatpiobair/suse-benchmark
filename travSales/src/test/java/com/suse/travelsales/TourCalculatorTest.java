@@ -4,6 +4,8 @@ import org.apache.commons.math3.util.CombinatoricsUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,6 +57,8 @@ public class TourCalculatorTest {
             for(Tour t:tlist)
             System.out.println(" -> " + t.getCities());
         }
+
+        assertEquals(tours.size(), 4);
     }
 
     @Test
@@ -62,10 +66,16 @@ public class TourCalculatorTest {
         TourCalculator calc = new TourCalculator(cityList);
         List<Tour> tours = calc.getShortest();
 
-        System.out.println("shortest distance: " + tours.get(0).getDistance());
+        BigDecimal distance = new BigDecimal(tours.get(0).getDistance());
+
+        System.out.println("shortest distance: " + distance);
         for(Tour t:tours) {
                 System.out.println(" -> " + t.getCities());
         }
+
+        BigDecimal expected = new BigDecimal(6.47213);
+        MathContext ctx = new MathContext(4);
+        assertEquals(distance.round(ctx), expected.round(ctx));
     }
 
     @Test
@@ -102,5 +112,7 @@ public class TourCalculatorTest {
         for(Tour t:tours) {
             System.out.println(" -> " + t.getCities());
         }
+        // should always be at least 2
+        assertTrue(tours.size() > 1);
     }
 }

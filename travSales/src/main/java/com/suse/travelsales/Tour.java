@@ -23,5 +23,13 @@ public class Tour {
         this.cities = cities;
     }
 
+    @Override
+    public String toString(){
+        StringBuilder builder = new StringBuilder().append(" {distance: ")
+                .append(this.getDistance())
+                .append(" cities: ")
+                .append(cities);
+        return builder.toString();
+    }
 
 }

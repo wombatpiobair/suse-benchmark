@@ -5,4 +5,6 @@ travSales - brute force implementation of traveling salesman problem.
 
 travelSalesSB - spring boot REST wrapper for travSales.
 
+travelSalesQ - Quarkus REST wrapper for travSales.
+
 tsClient - travelingsalesman rest client for integration with benchmark tests.

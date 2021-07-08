@@ -1,0 +1,2 @@
+com/suse/travelsales/quarkusTest.java
+ com.suse.travelsales.quarkusTest

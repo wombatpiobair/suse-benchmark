@@ -45,7 +45,7 @@ public class TourCalculator {
         return distances;
     }
 
-    protected List<List<City>> getPerumtations() {
+    public List<List<City>> getPerumtations() {
         Permuter perm = new Permuter<City>();
         return perm.permute(cities);
     }

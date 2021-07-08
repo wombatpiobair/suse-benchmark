@@ -51,7 +51,6 @@ public class TourCalculator {
     }
 
 
-
     protected float calcDistance(List<City> cities) {
 
         float distanceTotal = 0.0F;

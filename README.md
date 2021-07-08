@@ -5,4 +5,14 @@ travSales - brute force implementation of traveling salesman problem.
 
 travelSalesSB - spring boot REST wrapper for travSales.
 
+travelSalesQ - Quarkus REST wrapper for travSales.
+To use: 
+- Install GraalVM https://www.graalvm.org/docs/getting-started/macos/
+- set GRAALVM_HOME env var
+- add $GRAALVM_HOME/bin to PATH
+- `gu install native-image`
+- `./gradlew --console=plain quarkusDev` for local dev
+- `./gradlew build -Dquarkus.package.type=native` (OS specific; add `-Dquarkus.native.container-build=true` for containers)
+- `./build/travSales-Q-my-version-runner` to start native app
+
 tsClient - travelingsalesman rest client for integration with benchmark tests.

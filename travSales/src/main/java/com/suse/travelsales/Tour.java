@@ -28,7 +28,8 @@ public class Tour {
         StringBuilder builder = new StringBuilder().append(" {distance: ")
                 .append(this.getDistance())
                 .append(" cities: ")
-                .append(cities);
+                .append(cities)
+                .append(" }");
         return builder.toString();
     }
 

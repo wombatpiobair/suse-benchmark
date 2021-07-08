@@ -10,12 +10,11 @@ import static org.hamcrest.CoreMatchers.is;
 public class quarkusTest {
 
     @Test
-    public void testHelloEndpoint() {
+    public void testRandomEndpoint() {
         given()
-          .when().get("/hello")
+          .when().get("/random")
           .then()
-             .statusCode(200)
-             .body(is("Hello RESTEasy"));
+             .statusCode(200);
     }
 
 }

@@ -1,2 +1,0 @@
-com/suse/travelsales/quarkus/api/TravelingSalesman.java
- com.suse.travelsales.quarkus.api.TravelingSalesman

@@ -19,6 +19,11 @@ public class TourCalculator {
         return tours;
     }
 
+    public List<List<City>> getPerumtations() {
+        Permuter perm = new Permuter<City>();
+        return perm.permute(cities);
+    }
+
     public List<List<Tour>> getSortedTours() {
         return new ArrayList(getDistances().values());
     }
@@ -45,10 +50,6 @@ public class TourCalculator {
         return distances;
     }
 
-    public List<List<City>> getPerumtations() {
-        Permuter perm = new Permuter<City>();
-        return perm.permute(cities);
-    }
 
     protected float calcDistance(List<City> cities) {
 

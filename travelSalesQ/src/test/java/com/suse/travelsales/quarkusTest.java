@@ -12,7 +12,7 @@ public class quarkusTest {
     @Test
     public void testRandomEndpoint() {
         given()
-          .when().get("/random")
+          .when().get("/ts/random")
           .then()
              .statusCode(200);
     }

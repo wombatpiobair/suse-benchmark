@@ -13,45 +13,45 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/")
+@Path("/ts")
 public class TravelingSalesman {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("permutations")
-    public Response getPerumutations(List<City> cities) {
+    @Path("/permutations")
+    public List<List<City>> getPerumutations(List<City> cities) {
         TourCalculator calc = new TourCalculator(cities);
-        return Response.ok(calc.getPerumtations()).build();
+        return calc.getPerumtations();
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("distances")
-    public Response getDistances(List<City> cities) {
+    @Path("/distances")
+    public List<List<Tour>> getDistances(List<City> cities) {
         TourCalculator calc = new TourCalculator(cities);
-        return Response.ok(calc.getSortedTours()).build();
+        return calc.getSortedTours();
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("tour")
-    public Response getShortest(List<City> cities) {
+    @Path("/tour")
+    public List<Tour> getShortest(List<City> cities) {
         TourCalculator calc = new TourCalculator(cities);
-        return Response.ok(calc.getShortest()).build();
+        return calc.getShortest();
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("random")
-    public Response getRandomList() {
+    @Path("/random")
+    public List<City> getRandomList() {
         int number = 5;
         List<City> cities = new ArrayList<City>();
         for(int i=0; i<number; i++) {
             cities.add(new City());
         }
-        return Response.ok(cities).build();
+        return cities;
     }
 }

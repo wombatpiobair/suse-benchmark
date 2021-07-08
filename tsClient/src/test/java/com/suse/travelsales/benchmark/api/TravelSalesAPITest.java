@@ -1,17 +1,27 @@
-package com.suse.travelsales;
+package com.suse.travelsales.benchmark.api;
 
-import com.suse.travelsales.client.TravelSalesAPI;
+import com.suse.travelsales.City;
+import com.suse.travelsales.Tour;
+import com.suse.travelsales.benchmark.api.TravelSalesAPI;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TravelSalesAPITest {
+    TravelSalesAPI api;
+
+    @BeforeEach
+    public void setup() throws Exception {
+        api = new TravelSalesAPI(new URL("http://localhost:8080"));
+    }
 
     @Test
     public void testRandomCities() {
 
-        List<City> cities = TravelSalesAPI.getCities();
+        List<City> cities = api.getCities();
         System.out.println(cities);
     }
 
@@ -23,7 +33,7 @@ public class TravelSalesAPITest {
         cityList.add(new City(2, 2));
         cityList.add(new City(0, 1));
 
-        List<List<City>> cities = TravelSalesAPI.getPermutations(cityList);
+        List<List<City>> cities = api.getPermutations(cityList);
         System.out.println(cities);
     }
 
@@ -37,7 +47,7 @@ public class TravelSalesAPITest {
         cityList.add(new City(150, 4));
         cityList.add(new City(20, 15));
 
-        List<List<Tour>> tours = TravelSalesAPI.getDistances(cityList);
+        List<List<Tour>> tours = api.getDistances(cityList);
         System.out.println(tours);
     }
 
@@ -49,7 +59,7 @@ public class TravelSalesAPITest {
         cityList.add(new City(2, 2));
         cityList.add(new City(0, 1));
 
-        List<Tour> tours = TravelSalesAPI.getShortest(cityList);
+        List<Tour> tours = api.getShortest(cityList);
         System.out.println(tours);
     }
 }

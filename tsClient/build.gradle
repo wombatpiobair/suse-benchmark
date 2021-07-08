@@ -12,10 +12,11 @@ repositories {
 
 dependencies {
 	implementation project(':travSales')
+	implementation group: 'commons-cli', name:'commons-cli', version:'1.4'
+	implementation group: 'org.apache.commons', name:'commons-text', version:'1.6'
 	implementation group: 'org.springframework', name: 'spring-web', version: '5.3.4'
 	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.1'
-
-
+	implementation group: 'log4j', name: 'log4j', version: '1.2.17'
 
 
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'

@@ -1,2 +1,6 @@
 /.vscode/
 /.gradle/
+/.DS_Store
+/**/.settings/
+/**/.project
+/**/.classpath

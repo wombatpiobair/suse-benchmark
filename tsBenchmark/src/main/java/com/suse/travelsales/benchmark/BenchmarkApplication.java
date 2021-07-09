@@ -97,6 +97,7 @@ public class BenchmarkApplication {
         }
 
         BenchmarkPool pool = new BenchmarkPool(config);
+        long startmilis = System.currentTimeMillis();
         pool.execute();
 
         // wait here until the thread pool has terminated
@@ -105,6 +106,9 @@ public class BenchmarkApplication {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        long endmilis = System.currentTimeMillis();
+        printReport(endmilis-startmilis);
+
     }
 
     private CommandLine parseCommandLine(Options options, String[] args) {
@@ -208,5 +212,17 @@ public class BenchmarkApplication {
             cities.add(new City());
         }
         return cities;
+    }
+
+    private void printReport(long elapsed) {
+        ObjectMapper mapper = new ObjectMapper();
+        String json = "";
+        try {
+            json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(config);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Total elapsed time in milis:" + elapsed);
+        System.out.println("With config: " + json);
     }
 }

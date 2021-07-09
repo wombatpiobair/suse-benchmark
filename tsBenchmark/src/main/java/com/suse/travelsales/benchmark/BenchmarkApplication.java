@@ -10,6 +10,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import org.apache.log4j.Logger;
 
 
@@ -24,6 +26,7 @@ public class BenchmarkApplication {
 
 
         new BenchmarkApplication().run(args);
+
         logger.info("APPLICATION FINISHED");
     }
 
@@ -95,6 +98,13 @@ public class BenchmarkApplication {
 
         BenchmarkPool pool = new BenchmarkPool(config);
         pool.execute();
+
+        // wait here until the thread pool has terminated
+        try {
+            boolean status = pool.executor.awaitTermination(20, TimeUnit.MINUTES);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     private CommandLine parseCommandLine(Options options, String[] args) {

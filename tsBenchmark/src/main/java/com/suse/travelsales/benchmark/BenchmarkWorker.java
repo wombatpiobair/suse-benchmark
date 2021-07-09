@@ -42,7 +42,7 @@ public class BenchmarkWorker implements Runnable {
 
                 if (config.isShortest()) {
                     List<Tour> tours = api.getShortest(config.getCities());
-                    logger.info("Worker: " + id + "  calculated shortest distance with " + tours.size() + " unique solutions");
+                    logger.info("Worker: " + id + "  calculated shortest distance of: " + tours.get(0).getDistance() + "  with " + tours.size() + " unique solutions");
                 }
             }
         } catch (Exception e) {

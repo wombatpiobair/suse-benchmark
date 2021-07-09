@@ -34,4 +34,4 @@ Example:
 ```
 
 The above command will calculate all permutations, distances, and shortest distance for 8 cities using 10 parallel 
-threads and will loop through all the requests 100 times hitting a host at myurl.com on port 8080
+threads. Each thread will loop through the requests 100 times hitting an endpoint at myurl.com on port 8080

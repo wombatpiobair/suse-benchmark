@@ -1,11 +1,7 @@
 package com.suse.travelsales.benchmark;
 
-import com.suse.travelsales.City;
-
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -14,7 +10,6 @@ import org.apache.log4j.Logger;
 
 public class BenchmarkPool {
 
-    int iterations = 50;
     ThreadPoolExecutor executor;
     BenchmarkConfig config;
     List<BenchmarkWorker> workers;

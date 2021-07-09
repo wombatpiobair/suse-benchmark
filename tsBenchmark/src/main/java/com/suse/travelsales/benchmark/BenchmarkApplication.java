@@ -27,7 +27,7 @@ public class BenchmarkApplication {
 
         new BenchmarkApplication().run(args);
 
-        logger.info("APPLICATION FINISHED");
+        //logger.info("APPLICATION FINISHED");
     }
 
     private void run(String... args) {
@@ -206,12 +206,7 @@ public class BenchmarkApplication {
     }
 
     private List<City> createCities(int count) {
-        List<City> cities = new ArrayList<>();
-        // change to fixed list
-        for (int i=0; i<count; i++) {
-            cities.add(new City());
-        }
-        return cities;
+        return getNormalizedCityList().subList(0,count);
     }
 
     private void printReport(long elapsed) {
@@ -222,7 +217,35 @@ public class BenchmarkApplication {
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
+        System.out.println("\n\n\n========================\n");
         System.out.println("Total elapsed time in milis:" + elapsed);
+        System.out.println("\n========================\n");
         System.out.println("With config: " + json);
+    }
+
+    private List<City> getNormalizedCityList() {
+        List<City> cities = new ArrayList<>();
+        cities.add(new City(101,183));
+        cities.add(new City( 69,159));
+        cities.add(new City(195,67));
+        cities.add(new City(171,168));
+        cities.add(new City(25,2));
+        cities.add(new City(171,149));
+        cities.add(new City(29,19));
+        cities.add(new City(177,41));
+        cities.add(new City(50, 144));
+        cities.add(new City(164,84));
+        cities.add(new City(154, 149));
+        cities.add(new City(133, 86));
+        cities.add(new City(129,92));
+        cities.add(new City(168, 23));
+        cities.add(new City(114,118));
+        cities.add(new City(114, 125));
+        cities.add(new City(96,92));
+        cities.add(new City(9,45));
+        cities.add(new City(149,145));
+        cities.add(new City(42,120));
+
+        return cities;
     }
 }

@@ -33,5 +33,5 @@ Example:
 > tsBenchmark -pds -c8 -t10 -i100 http://myurl.com:8080
 ```
 
-The above command will calculate all permutations, distances, and shortest distance for 8 cities using 10 threads 
-and will loop through all the requests 100 times hitting a host at myurl.com on port 8080
+The above command will calculate all permutations, distances, and shortest distance for 8 cities using 10 parallel 
+threads and will loop through all the requests 100 times hitting a host at myurl.com on port 8080

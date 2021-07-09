@@ -6,7 +6,7 @@ build this project with
 ```
 this will place binaries and a fat jar in build/install/tsBenchmark-shadow/
 
-you can then run build/install/tsBenchmark-shadow/bin/tsBenchmark as a commandline script  -h or --help will list all the runtime options.
+you can then run build/install/tsBenchmark-shadow/bin/tsBenchmark as a commandline script  -h or --help will list all the runtime options. baseurl defaults to http://localhost:8080
 
 ```
 > tsBenchmark --help 
@@ -26,3 +26,12 @@ baseurl = location of services
 -s,--shortest           get the shortest routes
 -t,--threads <arg>      number of parallel threads
 ```
+
+Example:
+
+```
+> tsBenchmark -pds -c8 -t10 -i100 http://myurl.com:8080
+```
+
+The above command will calculate all permutations, distances, and shortest distance for 8 cities using 10 threads 
+and will loop through all the requests 100 times hitting a host at myurl.com on port 8080
